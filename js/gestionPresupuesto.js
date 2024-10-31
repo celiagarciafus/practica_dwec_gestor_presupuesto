@@ -13,8 +13,13 @@ function mostrarPresupuesto() {
 }
 
 function CrearGasto(descripcion, valor){
+
     this.mostrarGasto = function(){
         return "Gasto correspondiente a " + this.descripcion + " con valor " + this.valor + " €";
+    }
+
+    this.actualizarDescripcion = function(newDescripcion){
+        this.descripcion = newDescripcion;
     }
     
     this.descripcion = descripcion;
