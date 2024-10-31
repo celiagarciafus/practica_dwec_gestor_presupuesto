@@ -48,6 +48,14 @@ Etiquetas:\n`
         }
     }
 
+    this.anyadirEtiquetas = function(...etiquetas){
+        for(let etiqueta of etiquetas){
+            if (this.etiquetas.indexOf(etiqueta) == -1) {
+                this.etiquetas.push(etiqueta);
+            }
+        }
+    }
+
     this.descripcion = descripcion;
     if (valor>=0){
         this.valor = valor;
