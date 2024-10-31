@@ -4,9 +4,13 @@
 let presupuesto = 0;
 
 
-function actualizarPresupuesto() {
-    // TODO
-}
+function actualizarPresupuesto(newPresupuesto) {
+    if(newPresupuesto>=0){
+        presupuesto = newPresupuesto
+        return presupuesto;
+    } else {
+        return -1;
+    }
 
 function mostrarPresupuesto() {
     // TODO
