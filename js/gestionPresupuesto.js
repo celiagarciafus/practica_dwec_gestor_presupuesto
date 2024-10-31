@@ -42,6 +42,11 @@ Etiquetas:\n`
 
     };
 
+    this.actualizarFecha = function(fecha){
+        if (Date.parse(fecha)){
+            this.fecha = Date.parse(fecha);
+        }
+    }
 
     this.descripcion = descripcion;
     if (valor>=0){
