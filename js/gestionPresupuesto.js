@@ -56,6 +56,15 @@ Etiquetas:\n`
         }
     }
 
+    this.borrarEtiquetas = function(...etiq){
+        for(let etiqueta of etiq){
+            let position = this.etiquetas.indexOf(etiqueta);
+            if(position >= 0){
+                this.etiquetas.splice(position, 1);
+            }
+        }
+    }
+    
     this.descripcion = descripcion;
     if (valor>=0){
         this.valor = valor;
