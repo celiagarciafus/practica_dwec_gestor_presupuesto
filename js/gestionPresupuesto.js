@@ -1,4 +1,6 @@
 let presupuesto = 0;
+let gastos = [];
+let idGasto = 0;
 
 function actualizarPresupuesto(newPresupuesto) {
     if(newPresupuesto>=0){
@@ -27,7 +29,7 @@ function CrearGasto(descripcion, valor){
             this.valor = newValor;
         } 
     }
-    
+
     this.descripcion = descripcion;
     if (valor>=0){
         this.valor = valor;
