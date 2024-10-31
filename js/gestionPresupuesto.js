@@ -21,6 +21,12 @@ function CrearGasto(descripcion, valor){
     this.actualizarDescripcion = function(newDescripcion){
         this.descripcion = newDescripcion;
     }
+
+    this.actualizarValor = function(newValor){
+        if(newValor>=0){
+            this.valor = newValor;
+        } 
+    }
     
     this.descripcion = descripcion;
     if (valor>=0){
