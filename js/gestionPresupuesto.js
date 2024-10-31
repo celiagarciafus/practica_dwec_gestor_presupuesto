@@ -37,6 +37,9 @@ function CrearGasto(descripcion, valor){
         this.valor = 0;
     }
     
+function listarGastos(){
+    return gastos;
+}
 
 }
 
