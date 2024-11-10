@@ -9,6 +9,7 @@ function actualizarPresupuesto(newPresupuesto) {
     } else {
         return -1;
     }
+}
 
 function mostrarPresupuesto() {
     return "Tu presupuesto actual es de " + presupuesto +" €";
@@ -98,7 +99,6 @@ function anyadirGasto(gasto){
     gastos.push(gasto);
 }
 
-}
 
 function borrarGasto(id){
     for (let gasto of gastos){
