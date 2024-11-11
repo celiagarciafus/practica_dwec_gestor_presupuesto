@@ -174,7 +174,22 @@ function filtrarGastos(objeto){
     return gastosfiltrado;
 }
 
-function agruparGastos(){
+function agruparGastos(periodo,etiquetas,fechaDesde,fechaHasta){
+    let objeto = {fechaDesde: fechaDesde, fechaHasta: fechaHasta, etiquetasTiene: etiquetas};
+    let gastosfiltrados = filtrarGastos(objeto);
+
+    let gastofiltrado = gastosfiltrados.reduce(function(acumulador,gasto){
+        let periodo = gasto.obtenerPeriodoAgrupacion(periodo);
+
+        if (acumulador[periodo]) {
+            acumulador[periodo] = acumulador[periodo] + gasto.valor;
+        } else {
+            acumulador[periodo] = gasto.valor;
+        }
+            return acumulador;
+    }, {})
+
+return gastofiltrado;
 
 }
 
