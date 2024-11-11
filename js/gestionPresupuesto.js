@@ -179,12 +179,12 @@ function agruparGastos(periodo,etiquetas,fechaDesde,fechaHasta){
     let gastosfiltrados = filtrarGastos(objeto);
 
     let gastofiltrado = gastosfiltrados.reduce(function(acumulador,gasto){
-        let periodo = gasto.obtenerPeriodoAgrupacion(periodo);
+        let period = gasto.obtenerPeriodoAgrupacion(periodo);
 
-        if (acumulador[periodo]) {
-            acumulador[periodo] = acumulador[periodo] + gasto.valor;
+        if (acumulador[period]) {
+            acumulador[period] = acumulador[period] + gasto.valor;
         } else {
-            acumulador[periodo] = gasto.valor;
+            acumulador[period] = gasto.valor;
         }
             return acumulador;
     }, {})
