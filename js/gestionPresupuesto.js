@@ -41,7 +41,7 @@ Etiquetas:\n`
         }
         return texto;
 
-    };
+    }
 
     this.actualizarFecha = function(fecha){
         if (Date.parse(fecha)){
@@ -86,6 +86,21 @@ Etiquetas:\n`
             this.fecha = Date.parse(new Date());
         }
     }
+
+    this.obtenerPeriodoAgrupacion = function(periodo){
+
+        let fechaEscrita = new Date(this.fecha).toISOString();
+
+        if(periodo=="dia"){
+            return fechaEscrita.substring(0,10);
+        }
+        if(periodo=="mes"){
+            return fechaEscrita.substring(0,7);
+        }
+        if(periodo=="anyo"){
+            return fechaEscrita.substring(0,4);
+        }
+    }
 }
     
 function listarGastos(){
@@ -124,6 +139,14 @@ function calcularBalance(){
     return balance;
 }
 
+function filtrarGastos(){
+
+}
+
+function agruparGastos(){
+
+}
+
 export   {  
     listarGastos,
     anyadirGasto,
@@ -132,5 +155,7 @@ export   {
     calcularBalance,
     mostrarPresupuesto,
     actualizarPresupuesto,
+    filtrarGastos,
+    agruparGastos,
     CrearGasto
 }
