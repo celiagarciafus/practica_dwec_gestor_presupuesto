@@ -139,8 +139,39 @@ function calcularBalance(){
     return balance;
 }
 
-function filtrarGastos(){
+function filtrarGastos(objeto){
 
+    let gastosfiltrado =  gastos.filter(function(gasto) {
+        var devolver = true;
+        if (objeto.fechaDesde) {
+            devolver = devolver && (gasto.fecha >= Date.parse(objeto.fechaDesde));
+        }
+        if (objeto.fechaHasta) {
+            devolver = devolver && (gasto.fecha <= Date.parse(objeto.fechaHasta));
+        }
+        if (objeto.valorMinimo) {
+            devolver = devolver && (gasto.valor >= objeto.valorMinimo);
+        }
+        if (objeto.valorMaximo) {
+            devolver = devolver && (gasto.valor <= objeto.valorMaximo);
+        }
+        if (objeto.descripcionContiene) {
+            devolver = devolver && (gasto.descripcion.indexOf(objeto.descripcionContiene) > -1);
+        }
+        if (objeto.etiquetasTiene) {
+            let etiquetas = false;
+            for (let etiq of objeto.etiquetasTiene) {
+                if (gasto.etiquetas.indexOf(etiq) > -1) {
+                    etiquetas = true;
+                }
+            }
+            devolver = devolver && etiquetas;
+        }
+
+        return devolver;
+    })
+
+    return gastosfiltrado;
 }
 
 function agruparGastos(){
