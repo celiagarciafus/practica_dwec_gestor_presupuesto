@@ -1,5 +1,6 @@
-function mostrarDatoEnId(valor,idElemento){
-
+function mostrarDatoEnId(idElemento, valor){
+    let elementoid = document.createElement(idElemento);
+    elementoid.textContent = valor;
 }
 
 function mostrarGastoWeb(idElemento,gasto){
