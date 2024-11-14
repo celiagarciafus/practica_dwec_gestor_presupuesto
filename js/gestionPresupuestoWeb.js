@@ -1,9 +1,11 @@
+import { agruparGastos } from "./gestionPresupuesto";
+
 function mostrarDatoEnId(idElemento, valor){
     let elementoid = document.createElement(idElemento);
     elementoid.textContent = valor;
 }
 
-function mostrarGastoWeb(idElemento,gasto){//div, gasto1
+function mostrarGastoWeb(idElemento,gasto){
     let elementoHtml = document.createElement(idElemento);
     elementoHtml.classList.add("gasto");
 
@@ -34,7 +36,26 @@ function mostrarGastoWeb(idElemento,gasto){//div, gasto1
 }
 
 function mostrarGastosAgrupadosWeb(idElemento,agrup,periodo){
+    let agrup = document.createElement(idElemento);
+    agrup.classList.add("agrupacion");
 
+    let gastosAgrupPer = mostrarDatoEnId("h1", "Gastos agrupados por "+ periodo);
+    agrup.append(gastosAgrupPer);
+
+    for(let grupo of agrup){
+        let divAgru = document.createElement("div");
+        divAgru.classList.add("agrupacion-dato");
+
+        let nombre = mostrarDatoEnId("span", grupo.keys);
+        nombre.classList.add("agrupacion-dato-clave");
+
+        divAgru.append(nombre);
+
+        let valor = mostrarDatoEnId("span", grupo.values);
+        valor.classList.add("agrupacion-dato-valor");
+
+        divAgru.append(valor);
+    }
 }
 
 
