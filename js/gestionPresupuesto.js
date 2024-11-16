@@ -15,7 +15,7 @@ function mostrarPresupuesto() {
     return "Tu presupuesto actual es de " + presupuesto +" €";
 }
 
-function CrearGasto(descripcion, valor, fecha, ...etiquetas){
+function crearGasto(descripcion, valor, fecha, ...etiquetas){
 
     this.mostrarGasto = function(){
         return "Gasto correspondiente a " + this.descripcion + " con valor " + this.valor + " €";
@@ -203,5 +203,5 @@ export   {
     actualizarPresupuesto,
     filtrarGastos,
     agruparGastos,
-    CrearGasto
+    crearGasto
 }
